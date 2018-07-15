@@ -1,0 +1,13 @@
+version: "2"
+services:
+
+  postgres:
+    restart: always
+    image: postgres
+    volumes:
+      - /var/lib/postgresql/data
+
+  volume_container:
+    image: busybox
+    volumes_from:
+      - postgres
